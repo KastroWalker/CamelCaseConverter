@@ -13,7 +13,8 @@ class Converter {
 
         var sentenceConverted = ""
         for (word in words) {
-            sentenceConverted = "${sentenceConverted}${converterFirstLetterToUpperCase(word)}"
+            val wordInLowerCase = word.lowercase(Locale.getDefault())
+            sentenceConverted = "${sentenceConverted}${converterFirstLetterToUpperCase(wordInLowerCase)}"
         }
 
         return sentenceConverted

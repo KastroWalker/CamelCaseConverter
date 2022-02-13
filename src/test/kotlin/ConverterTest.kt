@@ -19,4 +19,12 @@ internal class ConverterTest {
         val sentenceConverted = converter.converterToCamelCase(sentence)
         assertEquals(sentenceInCamelCase, sentenceConverted)
     }
+
+    @Test
+    fun shouldConvertASentenceInUpperCaseToCamelCase() {
+        val sentence = "COMPOSITE NAME"
+        val sentenceInCamelCase = "CompositeName"
+        val sentenceConverted = converter.converterToCamelCase(sentence)
+        assertEquals(sentenceInCamelCase, sentenceConverted)
+    }
 }
