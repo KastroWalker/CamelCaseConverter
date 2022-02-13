@@ -1,3 +1,4 @@
+import exceptions.ConverterException
 import java.util.*
 
 class Converter {
@@ -7,14 +8,26 @@ class Converter {
         return word.replace(firstLetter, firstLetterConverted)
     }
 
-    fun converterToCamelCase(sentence: String): String {
-        val words = sentence.split(" ")
-        if (words.size == 1) return converterFirstLetterToUpperCase(words[0])
+    private fun validateSentence(sentence: String): Boolean {
+        val startsWithNumber = Regex("^\\d")
 
+        if (startsWithNumber.containsMatchIn(sentence)) {
+            throw ConverterException("The sentence cannot start with a number")
+        }
+
+        return true
+    }
+
+    fun converterToCamelCase(sentence: String): String {
         var sentenceConverted = ""
-        for (word in words) {
-            val wordInLowerCase = word.lowercase(Locale.getDefault())
-            sentenceConverted = "${sentenceConverted}${converterFirstLetterToUpperCase(wordInLowerCase)}"
+
+        if (validateSentence(sentence)) {
+            val words = sentence.split(" ")
+
+            for (word in words) {
+                val wordInLowerCase = word.lowercase(Locale.getDefault())
+                sentenceConverted = "${sentenceConverted}${converterFirstLetterToUpperCase(wordInLowerCase)}"
+            }
         }
 
         return sentenceConverted

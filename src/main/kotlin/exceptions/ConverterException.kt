@@ -1,5 +1,3 @@
 package exceptions
 
-class ConverterException : Throwable() {
-
-}
+class ConverterException(messsage: String) : RuntimeException(messsage)
