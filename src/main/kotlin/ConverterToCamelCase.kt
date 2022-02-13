@@ -8,8 +8,14 @@ class Converter {
     }
 
     fun converterToCamelCase(sentence: String): String {
-        val words = sentence.split(Regex("/s+/g"))
+        val words = sentence.split(" ")
         if (words.size == 1) return converterFirstLetterToUpperCase(words[0])
-        return ""
+
+        var sentenceConverted = ""
+        for (word in words) {
+            sentenceConverted = "${sentenceConverted}${converterFirstLetterToUpperCase(word)}"
+        }
+
+        return sentenceConverted
     }
 }
