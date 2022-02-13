@@ -9,10 +9,13 @@ class Converter {
     }
 
     private fun validateSentence(sentence: String): Boolean {
-        val startsWithNumber = Regex("^\\d")
+        val startWithNumber = Regex("^\\d").containsMatchIn(sentence)
+        val doesNotContainOnlyAlphanumerics = !Regex("^[a-zA-Z0-9\\s]*$").containsMatchIn(sentence)
 
-        if (startsWithNumber.containsMatchIn(sentence)) {
+        if (startWithNumber) {
             throw ConverterException("The sentence cannot start with a number")
+        } else if (doesNotContainOnlyAlphanumerics) {
+            throw ConverterException("The sentence must contain only alphanumerics")
         }
 
         return true

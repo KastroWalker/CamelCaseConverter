@@ -41,4 +41,16 @@ internal class ConverterTest {
 
         assertEquals(exception.message, expectedMessage)
     }
+
+    @Test
+    fun shouldContainOnlyAlphanumerics() {
+        val sentence = "COMPOSITE N@ME"
+        val expectedMessage = "The sentence must contain only alphanumerics"
+
+        val exception = assertThrows<ConverterException> {
+            converter.converterToCamelCase(sentence)
+        }
+
+        assertEquals(exception.message, expectedMessage)
+    }
 }

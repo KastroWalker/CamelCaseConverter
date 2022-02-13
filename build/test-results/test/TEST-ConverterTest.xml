@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ConverterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-02-13T21:40:14" hostname="pop-os" time="0.049">
+<testsuite name="ConverterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-02-13T21:55:19" hostname="pop-os" time="0.073">
   <properties/>
-  <testcase name="shouldConvertASentenceInUpperCaseToCamelCase()" classname="ConverterTest" time="0.04"/>
+  <testcase name="shouldConvertASentenceInUpperCaseToCamelCase()" classname="ConverterTest" time="0.058"/>
   <testcase name="shouldConvertAWordToCamelCase()" classname="ConverterTest" time="0.002"/>
+  <testcase name="shouldContainOnlyAlphanumerics()" classname="ConverterTest" time="0.004"/>
   <testcase name="shouldConvertASentenceToCamelCase()" classname="ConverterTest" time="0.002"/>
   <testcase name="shouldNotConvertSetencesStartingWithNumbers()" classname="ConverterTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
